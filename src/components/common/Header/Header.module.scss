@@ -1,0 +1,23 @@
+@use "sass:math";
+@import "../../../assets/styles/main.scss";
+
+.Header {
+  position: absolute;
+  top: rem(41);
+  width: 100%;
+}
+.Header__container {
+  @include adaptiveValue("width", 1270, 320);
+}
+.Header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+.Header__buttons{
+  display: flex;
+  align-items:center;
+  gap:rem(30);
+
+}

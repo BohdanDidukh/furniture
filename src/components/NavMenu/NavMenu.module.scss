@@ -1,0 +1,17 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.NavMenu {
+   display: flex;
+   justify-content: center;
+   align-items:center;
+   @include adaptiveValue("gap", 63, 35);
+   @media (max-width: $mobile) {
+      justify-content:flex-end;
+      flex-direction: column-reverse;
+      column-gap: rem(35);
+      text-align: center;
+      height: 100%;
+      @include adaptiveValue("padding-top", 130, 100);
+    }
+}
