@@ -1,0 +1,13 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.FilterButton {
+  order: 0;
+  @include adaptiveValue("width", 84, 64);
+  font-family: "Gilroy";
+  font-weight: 500;
+  font-size: rem(18);
+  line-height: math.div(33, 18);
+  color: $mainColor;
+  opacity: 0.8;
+}

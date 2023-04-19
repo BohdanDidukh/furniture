@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import NavMenu from "../NavMenu/NavMenu";
 
-import { RootState } from "../../reducers/rootReducer";
+import { RootState } from "../../store/rootReducer";
 
 import styles from "./Navigation.module.scss";
 
@@ -18,8 +18,8 @@ const Navigation: FC<NavigationProps> = () => {
     <nav
       className={
         isMenuOpen
-        ? `${styles.Navigation} ${styles["Menu-open"]}`
-        : `${styles.Navigation} ${styles["Menu-close"]}`
+          ? `${styles.Navigation} ${styles["Menu-open"]}`
+          : `${styles.Navigation} ${styles["Menu-close"]}`
       }
     >
       <NavMenu></NavMenu>

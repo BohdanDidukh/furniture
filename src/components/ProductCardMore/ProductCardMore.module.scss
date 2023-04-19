@@ -1,0 +1,52 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.ProductCardMore {
+  display: flex;
+  flex-direction: column;
+  width: rem(270);
+  border-radius: 20px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.ProductCardMore__img {
+  width: rem(270);
+  height: rem(335);
+  margin-left: auto;
+  margin-right: auto;
+}
+.ProductCardMore__body {
+  width: rem(270);
+  height: rem(203);
+  background-color: #fff;
+  border-radius: 0 0 rem(20) rem(20);
+  text-align: center;
+}
+.ProductCardMore__main {
+  padding-top: rem(13);
+  padding-left: rem(22);
+}
+.ProductCardMore__category {
+  width: rem(85);
+  height: rem(20);
+  background: #f7f7f7;
+}
+.ProductCardMore__title {
+  margin: rem(6) 0;
+  width: rem(150);
+  height: rem(25);
+  background: #f7f7f7;
+}
+.ProductCardMore__rating {
+  width: rem(105);
+  height: rem(20);
+  background: #f7f7f7;
+}
+.ProductCardMore__footer {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(50) rem(21) 0 rem(21);
+}
