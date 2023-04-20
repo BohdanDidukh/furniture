@@ -2,8 +2,7 @@
 @import "../../../assets/styles/main.scss";
 
 .Header {
-  position: absolute;
-  top: rem(41);
+  padding-top: rem(41);
   width: 100%;
 }
 .Header__content {

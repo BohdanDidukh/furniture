@@ -1,0 +1,13 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.Hero {
+  text-align: center;
+}
+.Hero__container {
+  background: url(../../assets/images/intro.webp);
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: rem(1085);
+}

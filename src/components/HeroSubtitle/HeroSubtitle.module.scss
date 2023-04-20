@@ -1,0 +1,14 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.HeroSubtitle {
+  max-width: rem(606);
+  margin: auto;
+  padding-top: rem(15);
+  font-family: "Gilroy";
+  font-weight: 400;
+  font-size: rem(24);
+  line-height: 160%;
+  color: $secondaryColor;
+  opacity: 0.8;
+}
