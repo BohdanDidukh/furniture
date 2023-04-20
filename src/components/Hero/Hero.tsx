@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 
+import Container from "../common/Container/Container";
 import Header from "../common/Header/Header";
 import HeroTitle from "../HeroTitle/HeroTitle";
 import HeroSubtitle from "../HeroSubtitle/HeroSubtitle";
@@ -11,20 +12,18 @@ interface HeroProps {}
 
 const Hero: FC<HeroProps> = () => (
   <section className={styles.Hero}>
-    <div className={styles.Hero__container}>
-      <div className={styles.Hero__content}>
-        <Header></Header>
-        <HeroTitle
-          label={"Make your interior more minimalistic & modern"}
-        ></HeroTitle>
-        <HeroSubtitle
-          label={
-            "Turn your room with panto into a lot more minimalist and modern with ease and speed"
-          }
-        ></HeroSubtitle>
-        <Search></Search>
-      </div>
-    </div>
+    <Container>
+      <Header></Header>
+      <HeroTitle
+        label={"Make your interior more minimalistic & modern"}
+      ></HeroTitle>
+      <HeroSubtitle
+        label={
+          "Turn your room with panto into a lot more minimalist and modern with ease and speed"
+        }
+      ></HeroSubtitle>
+      <Search></Search>
+    </Container>
   </section>
 );
 

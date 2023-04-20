@@ -9,7 +9,7 @@
   margin: auto;
   margin-top: rem(45);
   padding: 8px 8px 8px 20px;
-  width: rem(345);
+  @include adaptiveValue("width", 345, 300);
   height: rem(56);
   background: rgba(255, 255, 255, 0.15);
   border: 0.861538px solid rgba(255, 255, 255, 0.6);
