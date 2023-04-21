@@ -1,0 +1,28 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.Features {
+}
+.Features__content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: rem(120) 0;
+}
+.Features__title {
+  display: inline-block;
+  text-align: left;
+  max-width: rem(245);
+  margin-right: rem(30);
+}
+
+@media (max-width: 1140px) {
+  .Features__content {
+    flex-direction: column;
+  }
+  .Features__title {
+    margin: auto;
+    margin-bottom: rem(50);
+    max-width: rem(500);
+  }
+}

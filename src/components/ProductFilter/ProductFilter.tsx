@@ -30,7 +30,7 @@ const ProductFilter: FC<ProductFilterProps> = () => {
                 activeFilter === "Chair"
                   ? "0"
                   : filters.find((filter) => filter.category === activeFilter)
-                      ?.position,
+                    ?.position,
             }}
           />
         </div>

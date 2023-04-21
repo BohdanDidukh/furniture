@@ -1,0 +1,24 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.FeaturesCard {
+  text-align: left;
+  max-width: rem(285);
+}
+.FeaturesCard__title {
+  font-family: "Gilroy";
+  font-weight: 700;
+  font-size: rem(26);
+  line-height: math.div(30, 26);
+  color: $mainColor;
+  opacity: 0.9;
+}
+.FeaturesCard__text {
+  margin: rem(20) 0 rem(14) 0;
+  font-family: "Gilroy";
+  font-weight: 400;
+  font-size: rem(18);
+  line-height: 185%;
+  color: $mainColor;
+  opacity: 0.8;
+}

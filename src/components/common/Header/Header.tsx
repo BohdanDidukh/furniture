@@ -1,4 +1,4 @@
-import React, { FC} from "react";
+import React, { FC } from "react";
 
 import Logo from "../Logo/Logo";
 import Navigation from "../../Navigation/Navigation";
@@ -11,14 +11,14 @@ interface HeaderProps {}
 const Header: FC<HeaderProps> = () => {
   return (
     <header className={styles.Header}>
-        <div className={styles.Header__content}>
-          <Logo isBlack={false}></Logo>
-          <Navigation />
-          <div className={styles.Header__buttons}>
-            <MenuButton />
-            <ShopingCart />
-          </div>
+      <div className={styles.Header__content}>
+        <Logo isBlack={false}></Logo>
+        <Navigation />
+        <div className={styles.Header__buttons}>
+          <MenuButton />
+          <ShopingCart />
         </div>
+      </div>
     </header>
   );
 };
