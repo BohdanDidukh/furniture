@@ -1,0 +1,32 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.ReviewsSlider {
+   margin-top: rem(60);
+   margin-bottom: rem(215);
+   position: relative;
+}
+.PrevArrow,
+.NextArrow {
+  position: absolute;
+  top: 30%;
+  z-index: 10;
+  width: rem(50);
+  height: rem(50);
+  background: #ffffff;
+  box-shadow: 0px 7.03125px 19.5312px rgba(0, 0, 0, 0.06);
+  border-radius: rem(26);
+  cursor: pointer;
+  svg {
+    width: rem(26);
+    height: rem(26);
+  }
+}
+
+.PrevArrow {
+  left: 0;
+}
+
+.NextArrow {
+  right: 0;
+}
