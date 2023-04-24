@@ -79,13 +79,13 @@ const ReviewsSlider: FC<ReviewsSliderProps> = ({ items }) => {
     prevArrow: <CustomPrevArrow />,
     responsive: [
       {
-        breakpoint: 740, // Брейкпоінт для адаптивності
+        breakpoint: 1240, // Брейкпоінт для адаптивності
         settings: {
           slidesToShow: 2, // Кількість відображуваних слайдів при розмірі екрану менше 480px
         },
       },
       {
-        breakpoint: 740, // Брейкпоінт для адаптивності
+        breakpoint: 840, // Брейкпоінт для адаптивності
         settings: {
           slidesToShow: 1, // Кількість відображуваних слайдів при розмірі екрану менше 480px
         },
