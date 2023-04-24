@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import NavMenu from "../NavMenu/NavMenu";
@@ -13,6 +13,14 @@ const Navigation: FC<NavigationProps> = () => {
   const isMenuOpen = useSelector(
     (state: unknown) => (state as RootState).menu.isOpen
   );
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMenuOpen]);
 
   return (
     <nav

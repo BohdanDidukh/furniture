@@ -25,6 +25,8 @@
     }
     &.Menu-open {
       left: 0;
+      backdrop-filter: blur(15px);
+      overflow: hidden;
       &::before {
         left: 0;
       }
