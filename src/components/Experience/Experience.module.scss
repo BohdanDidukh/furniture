@@ -1,0 +1,13 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.Experience {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 1140px) {
+  .Experience {
+    flex-direction: column;
+    align-items: center;
+  }
+}

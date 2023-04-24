@@ -1,0 +1,81 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.ExperiencePhoto {
+  position: relative;
+  display: inline-block;
+  margin-right: rem(80);
+  img {
+    display: block;
+    @include adaptiveValue("width", 600, 400, 0, 1440, 980);
+    height: auto;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: rem(52);
+    left: 50%;
+    transform: translateX(-50%);
+    @include adaptiveValue("width", 555, 300, 0, 1440, 980);
+    @include adaptiveValue("width", 555, 200, 0, 1140, 320);
+    height: auto;
+    filter: blur(25px);
+    border-radius: rem(50);
+    background-image: url("../../assets/images/experience1.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    opacity: 0.7;
+    z-index: -1;
+  }
+}
+.ExperiencePhoto__elements {
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    @include adaptiveValue("width", 495, 300, 0, 1440, 980);
+    @include adaptiveValue("height", 422, 200, 0, 1440, 980);
+    @include adaptiveValue("top", -66, -20, 0, 1440, 980);
+    background: $backgroundColor;
+    border-radius: 0px 20px 20px 0px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    right: rem(-61);
+    @include adaptiveValue("width", 100, 100, 0, 1440, 980);
+    @include adaptiveValue("height", 300, 200, 0, 1440, 980);
+    background: $backgroundColor;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 1140px) {
+  .ExperiencePhoto {
+    margin-right: 0;
+    img {
+      @include adaptiveValue("width", 600, 300, 0, 980, 320);
+      border-radius: rem(20);
+    }
+    &::after {
+      @include adaptiveValue("width", 555, 200, 0, 1140, 320);
+      border-radius: rem(20);
+    }
+  }
+  .ExperiencePhoto__elements {
+    &::before {
+      @include adaptiveValue("width", 495, 200, 0, 1140, 320);
+      @include adaptiveValue("height", 422, 200, 0, 1140, 320);
+      @include adaptiveValue("top", -66, -30, 0, 1140, 320);
+      @include adaptiveValue("left", 46, 30, 0, 1140, 320);
+      border-radius: rem(20);
+    }
+    &::after {
+      @include adaptiveValue("height", 300, 200, 0, 1140, 320);
+      @include adaptiveValue("right", -61, -31, 0, 1140, 320);
+    }
+  }
+}

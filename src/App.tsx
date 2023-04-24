@@ -1,11 +1,12 @@
 import React, { FC } from "react";
 
-import Features from "./components/Features/Features";
 import Hero from "./components/Hero/Hero";
+import Features from "./components/Features/Features";
 import Shop from "./components/Shop/Shop";
+import Advantages from "./components/Advantages/Advantages";
+import Reviews from "./components/Reviews/Reviews";
 
 import styles from "./App.module.scss";
-import Reviews from "./components/Reviews/Reviews";
 
 interface AppProps {}
 
@@ -14,6 +15,7 @@ const App: FC<AppProps> = () => (
     <Hero />
     <Features />
     <Shop />
+    <Advantages />
     <Reviews />
   </div>
 );

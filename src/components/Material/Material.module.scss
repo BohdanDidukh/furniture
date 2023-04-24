@@ -1,0 +1,15 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.Material {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding-top: rem(240);
+}
+@media (max-width: 1140px) {
+  .Material {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+}

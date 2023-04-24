@@ -1,0 +1,29 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.AdvantagesInfo {
+}
+.AdvantagesInfo__subtitle {
+  text-align: left;
+  padding-top: rem(18);
+}
+.AdvantagesInfo__title {
+  max-width: rem(415);
+  padding: rem(20) 0;
+}
+.AdvantagesInfo__text {
+  max-width: rem(555);
+  padding-bottom: rem(24);
+  font-family: "Gilroy";
+  font-weight: 400;
+  font-size: rem(18);
+  line-height: 185%;
+  color: $mainColor;
+  opacity: 0.8;
+}
+
+@media (max-width: 1140px) {
+  .AdvantagesInfo {
+    padding-top: rem(40);
+}
+}
