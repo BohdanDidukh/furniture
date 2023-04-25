@@ -1,0 +1,16 @@
+@use "sass:math";
+@import "../../../assets/styles/main.scss";
+
+.Footer {
+  background-color: $backgroundColor;
+}
+.Footer__body {
+  display: flex;
+  justify-content: space-between;
+  padding: rem(118) 0;
+}
+@media (max-width: 980px) {
+  .Footer__body {
+    flex-direction: column;
+  }
+}

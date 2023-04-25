@@ -5,6 +5,7 @@ import Features from "./components/Features/Features";
 import Shop from "./components/Shop/Shop";
 import Advantages from "./components/Advantages/Advantages";
 import Reviews from "./components/Reviews/Reviews";
+import Footer from "./components/common/Footer/Footer";
 
 import styles from "./App.module.scss";
 
@@ -17,6 +18,7 @@ const App: FC<AppProps> = () => (
     <Shop />
     <Advantages />
     <Reviews />
+    <Footer />
   </div>
 );
 

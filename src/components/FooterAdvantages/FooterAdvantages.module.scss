@@ -1,0 +1,28 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.FooterAdvantages {
+  margin-right: rem(50);
+}
+.FooterAdvantages__text {
+  max-width: rem(300);
+  margin-top: rem(29);
+  font-family: "Gilroy";
+  font-weight: 500;
+  font-size: rem(15);
+  line-height: 160%;
+  color: $mainColor;
+  opacity: 0.8;
+}
+@media (max-width: 980px) {
+  .FooterAdvantages {
+    margin-right: 0;
+    margin-bottom: rem(50);
+    text-align: center;
+  }
+  .FooterAdvantages__text {
+    margin: auto;
+    margin-top: rem(29);
+    font-size: rem(20);
+  }
+}

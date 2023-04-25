@@ -1,0 +1,35 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.FooterPrivacy {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: rem(58);
+}
+.FooterPrivacy__copyright {
+  font-family: "Gilroy";
+  font-weight: 400;
+  font-size: rem(15);
+  line-height: math.div(20, 15);
+  letter-spacing: -0.204545px;
+  color: #1e2833;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
+.FooterPrivacy__policy {
+  display: flex;
+  gap: rem(40);
+  font-family: "Gilroy";
+  font-weight: 500;
+  font-size: rem(15);
+  line-height: 160%;
+  color: $mainColor;
+  opacity: 0.8;
+}
+@media (max-width: 540px) {
+  .FooterPrivacy {
+    flex-direction: column;
+    align-items: center;
+    gap: rem(30);
+  }
+}

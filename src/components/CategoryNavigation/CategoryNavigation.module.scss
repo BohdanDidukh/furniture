@@ -1,0 +1,26 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.CategoryNavigation {
+}
+.CategoryNavigation__title {
+  padding-bottom: rem(20);
+  font-family: "Gilroy";
+  font-weight: 400;
+  font-size: rem(17);
+  line-height: math.div(22, 17);
+  letter-spacing: -0.231818px;
+  color: $accentColor;
+}
+.CategoryNavigation__body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: rem(16);
+}
+@media (max-width: 540px) {
+  .CategoryNavigation__title {
+    font-size: rem(34);
+    justify-content: center;
+  }
+}
