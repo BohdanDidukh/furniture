@@ -1,0 +1,53 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.MenuButton {
+   display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    position: relative;
+    width: rem(30);
+    height: rem(18);
+    cursor: pointer;
+    z-index: 5;
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      height: rem(2);
+      background-color: $secondaryColor;
+    }
+    &::before {
+      top: 0;
+      width: rem(20);
+    }
+    &::after {
+      bottom: 0;
+      width: rem(20);
+    }
+    span {
+      width: rem(15);
+      top: calc(50% - rem(1));
+    }
+    &.Menu-open {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+        width: 100%;
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

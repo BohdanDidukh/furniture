@@ -1,0 +1,15 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.FooterNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  @include adaptiveValue("width", 665, 280, 0, 980, 300);
+  @media (max-width: 540px) {
+    text-align: center;
+    flex-direction: column;
+    gap: rem(30);
+  }
+}

@@ -1,0 +1,51 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.Search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: rem(10);
+  margin: auto;
+  margin-top: rem(45);
+  padding: 8px 8px 8px 20px;
+  @include adaptiveValue("width", 345, 300);
+  height: rem(56);
+  background: rgba(255, 255, 255, 0.15);
+  border: 0.861538px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 42px;
+}
+.Search__input {
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  font-family: "Gilroy";
+  font-weight: 400;
+  font-size: rem(18);
+  line-height: 150%;
+  color: $secondaryColor;
+  opacity: 0.8;
+  background: none;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: $secondaryColor;
+    opacity: 0.8;
+  }
+}
+.Search__button {
+  display: flex;
+  padding: rem(11);
+  gap: rem(10);
+  width: rem(40);
+  height: rem(40);
+  background: $accentColor;
+  border-radius: 24px;
+}
+.Search__icon {
+  width: rem(18);
+  height: rem(18);
+  background: none;
+}

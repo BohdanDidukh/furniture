@@ -1,0 +1,162 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.MaterialPhoto {
+  display: flex;
+  align-items: flex-end;
+  margin-left: rem(30);
+
+  div {
+    position: relative;
+    &:nth-child(2) {
+      img {
+        @include adaptiveValue("width", 445, 350, 0, 1440, 760);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: rem(-21);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        @include adaptiveValue("width", 395, 300, 0, 1440, 980);
+        @include adaptiveValue("height", 423, 340, 0, 1440, 980);
+        background: url(../../assets/images/materials3.png);
+        opacity: 0.5;
+        filter: blur(25px);
+        border-radius: rem(29);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        @include adaptiveValue("top", -66, -20, 0, 1440, 980);
+        right: 0;
+        z-index: -1;
+        width: rem(300);
+        @include adaptiveValue("height", 423, 200, 0, 1440, 980);
+        background: $backgroundColor;
+        border-radius: 20px 0px 0px 20px;
+      }
+    }
+  }
+}
+.MaterialPhoto__column {
+  display: flex;
+  flex-direction: column;
+  gap: rem(47);
+  margin-right: rem(42);
+  div {
+    position: relative;
+    &:nth-child(1) {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: rem(-21);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: rem(176);
+        height: rem(183);
+        background: url(../../assets/images/materials2.png);
+        opacity: 0.5;
+        filter: blur(25px);
+        border-radius: rem(29);
+      }
+    }
+    &:nth-child(2) {
+      img {
+        width: rem(223);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: rem(-21);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: rem(176);
+        height: rem(301);
+        background: url(../../assets/images/materials2.png);
+        opacity: 0.5;
+        filter: blur(25px);
+        border-radius: rem(29);
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .MaterialPhoto {
+    margin-left: rem(0);
+    div {
+      &:nth-child(2) {
+        img {
+          @include adaptiveValue("width", 445, 380, 0, 1140, 980);
+        }
+        &::before {
+          bottom: rem(-21);
+          @include adaptiveValue("width", 395, 300, 0, 1440, 980);
+          @include adaptiveValue("height", 423, 300, 0, 1440, 980);
+        }
+        &::after {
+          @include adaptiveValue("top", -66, -20, 0, 1440, 760);
+          right: 0;
+          @include adaptiveValue("width", 300, 200, 0, 1440, 980);
+          @include adaptiveValue("height", 423, 200, 0, 1440, 760);
+        }
+      }
+    }
+  }
+  .MaterialPhoto__column {
+    div {
+      &:nth-child(1) {
+        img {
+          @include adaptiveValue("width", 223, 200, 0, 1140, 760);
+        }
+      }
+      &:nth-child(2) {
+        img {
+          @include adaptiveValue("width", 223, 200, 0, 1140, 760);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .MaterialPhoto {
+    flex-direction: column;
+    align-items: center;
+    gap: rem(30);
+    div {
+      &:nth-child(2) {
+        img {
+          @include adaptiveValue("width", 500, 260, 0, 768, 320);
+          border-radius: rem(20);
+        }
+      }
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .MaterialPhoto__column {
+    margin-left: auto;
+    margin-right: auto;
+    div {
+      &:nth-child(1) {
+        img {
+          @include adaptiveValue("width", 500, 260, 0, 768, 320);
+        }
+      }
+      &:nth-child(2) {
+        img {
+          @include adaptiveValue("width", 500, 260, 0, 768, 320);
+        }
+      }
+    }
+  }
+}

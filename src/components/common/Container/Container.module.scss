@@ -1,0 +1,14 @@
+@use "sass:math";
+@import "../../../assets/styles/main.scss";
+
+.Container {
+  max-width: rem($maxWidthContainer);
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 rem(math.div($containerPadding, 2));
+  @media (max-width: $mobile) {
+    padding-left: rem(math.div($containerPadding, 4));
+    padding-right: rem(math.div($containerPadding, 4));
+}
+
+}

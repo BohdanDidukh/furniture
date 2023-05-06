@@ -1,0 +1,12 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.MoreLink {
+  font-size: rem(18);
+  color: $accentColor;
+  display: flex;
+  align-items: center;
+  svg {
+    padding-left: rem(15);
+  }
+}

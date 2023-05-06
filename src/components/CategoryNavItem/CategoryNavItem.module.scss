@@ -1,0 +1,26 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.CategoryNavItem {
+  display: flex;
+  align-items: center;
+  font-family: "Gilroy";
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 160%;
+  color: $mainColor;
+  opacity: 0.8;
+}
+.CategoryNavItem__icon {
+  margin-right: rem(18);
+}
+@media (max-width: 540px) {
+  .CategoryNavItem {
+    font-size: rem(30);
+    justify-content: center;
+  }
+  .CategoryNavItem__icon {
+    width: auto;
+    height: rem(25);
+  }
+}

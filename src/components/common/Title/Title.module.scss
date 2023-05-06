@@ -1,0 +1,12 @@
+@use "sass:math";
+@import "../../../assets/styles/main.scss";
+
+.Title {
+  margin: auto;
+  font-family: "Gilroy";
+  @include adaptiveValue("font-size", 42, 34);
+  font-weight: 700;
+  line-height: math.div(49, 42);
+  color: $mainColor;
+
+}

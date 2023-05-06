@@ -1,0 +1,14 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.Reviews {
+  padding-top: rem(50);
+}
+.Reviews__subtitle {
+  padding-bottom: rem(20);
+  text-align: center;
+}
+.Reviews__title {
+  margin: auto;
+  text-align: center;
+}

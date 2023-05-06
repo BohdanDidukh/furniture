@@ -1,0 +1,89 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.ReviewsCard {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  @include adaptiveValue("width", 370, 320, 0, 1440, 1300);
+  height: rem(510);
+}
+.ReviewsCard__wrapper {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  @include adaptiveValue("width", 370, 320, 0, 1440, 1300);
+  height: rem(476);
+  border-radius: rem(18);
+  background-repeat: no-repeat;
+}
+.ReviewsCard__reflection {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  top: rem(110);
+  width: rem(300);
+  height: rem(380);
+  opacity: 0.4;
+  filter: blur(10px);
+  border-radius: rem(45);
+}
+.ReviewsCard__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  bottom: rem(18);
+  transform: translateX(-50%);
+  @include adaptiveValue("width", 335, 280, 0, 1440, 1300);
+  height: rem(210);
+  background: $secondaryColor;
+  backdrop-filter: blur(5.5px);
+  border-radius: rem(18);
+}
+.ReviewsCard__avatar {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: rem(-33);
+  margin-bottom: rem(10);
+  padding: rem(8);
+  background: $secondaryColor;
+  border-radius: 50%;
+  img {
+    width: rem(50);
+    height: rem(50);
+  }
+}
+.ReviewsCard__nikname {
+  font-family: "Gilroy";
+  font-weight: 700;
+  font-size: rem(18);
+  line-height: math.div(21, 18);
+  text-align: center;
+  text-transform: capitalize;
+  color: $mainColor;
+}
+.ReviewsCard__name {
+  padding-top: rem(6);
+  font-family: "Gilroy";
+  font-weight: 400;
+  font-size: rem(12);
+  line-height: math.div(14, 12);
+  text-align: center;
+  color: $mainColor;
+  opacity: 0.6;
+}
+.ReviewsCard__review {
+  width: rem(252);
+  padding: rem(22) 0;
+  font-family: "Gilroy";
+  font-weight: 400;
+  font-size: rem(14);
+  line-height: math.div(16, 14);
+  text-align: center;
+  color: $mainColor;
+  opacity: 0.8;
+}

@@ -1,0 +1,40 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.Navigation {
+   @media (max-width: $mobile) {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: -100%;
+      transition: all 0.3s ease 0s;
+      overflow: hidden;
+      z-index: 3;
+      
+      &::before {
+        content: "";
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        @include adaptiveValue("height", 140, 100, 768, 320, 2);
+        
+      }
+    }
+    &.Menu-open {
+      left: 0;
+      backdrop-filter: blur(15px);
+      overflow: hidden;
+      &::before {
+        left: 0;
+      }
+    }
+    &.Menu-close {
+      left: -100%;
+      &::before {
+        left: -100%;
+      }
+    }
+}
