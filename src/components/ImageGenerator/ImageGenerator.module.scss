@@ -1,0 +1,41 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.ImageGenerator {
+  margin-bottom: rem(100);
+}
+.ImageGenerator_subtitle {
+  text-align: center;
+  margin: auto;
+}
+.ImageGenerator_title {
+  text-align: center;
+  margin: auto;
+}
+.ImageGenerator__loading {
+  margin: auto;
+  @include adaptiveValue("width", 512, 270);
+  @include adaptiveValue("height", 512, 270);
+  padding-top: rem(40);
+  text-align: center;
+}
+.ImageGenerator__img {
+  display: flex;
+  gap: rem(20);
+  justify-content: center;
+  align-items: center;
+  margin-top: rem(40);
+  img {
+    @include adaptiveValue("width", 512, 270);
+    @include adaptiveValue("height", 512, 270);
+    border-radius: rem(20);
+  }
+}
+@media (max-width: 768px) {
+  .ImageGenerator__img {
+    flex-direction: column;
+  }
+  .ImageGenerator__loading {
+    @include adaptiveValue("height", 1024, 270);
+  }
+}
