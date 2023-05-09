@@ -1,0 +1,22 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.SofaChangeColor {
+  position: absolute;
+  @include adaptiveValue("bottom", 400, 460,0,1440,1000);
+  @include adaptiveValue("left", 250, 200);
+  display: flex;
+  justify-content: space-evenly;
+  width: 112px;
+  height: 55.96px;
+  background-image: url(../../assets/images/union.png);
+}
+
+.SofaChangeColor__button {
+  margin-top: rem(12);
+  width: 24px;
+  height: 24px;
+  border: 2px solid $secondaryColor;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}

@@ -9,7 +9,7 @@ import ImageSearch from "../ImageSearch/ImageSearch";
 import styles from "./ImageGenerator.module.scss";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -17,10 +17,10 @@ interface ImageGeneratorProps {}
 
 const ImageGenerator: FC<ImageGeneratorProps> = () => {
   const [image, setImage] = useState(
-    "https://oaidalleapiprodscus.blob.core.windows.net/private/org-wuyDqsQhD28qJUtbqfXKRoeK/user-TssUk3S0DwDVDQsrn19yjfit/img-oJO7V1HklHwpaNXcxvwlmpQm.png?st=2023-05-07T15%3A51%3A38Z&se=2023-05-07T17%3A51%3A38Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-05-07T16%3A16%3A26Z&ske=2023-05-08T16%3A16%3A26Z&sks=b&skv=2021-08-06&sig=Z1z1fBsmhi7y20uswKM3MRbKB8TYyP77fJdFC0f/ZAc%3D"
+    "https://oaidalleapiprodscus.blob.core.windows.net/private/org-wuyDqsQhD28qJUtbqfXKRoeK/user-TssUk3S0DwDVDQsrn19yjfit/img-GbkKzzOZ5SLJHgTFFFZ6lQ96.png?st=2023-05-08T14%3A18%3A21Z&se=2023-05-08T16%3A18%3A21Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-05-08T03%3A25%3A36Z&ske=2023-05-09T03%3A25%3A36Z&sks=b&skv=2021-08-06&sig=KEgWX5Bsv/wQOwhhAa6UdzsfsXKQi5STtTzkzl/HGW4%3D"
   );
   const [image2, setImage2] = useState(
-    "https://oaidalleapiprodscus.blob.core.windows.net/private/org-wuyDqsQhD28qJUtbqfXKRoeK/user-TssUk3S0DwDVDQsrn19yjfit/img-CJAosOFYP2TnZrz6EP7iYJdR.png?st=2023-05-07T15%3A50%3A25Z&se=2023-05-07T17%3A50%3A25Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-05-07T16%3A20%3A05Z&ske=2023-05-08T16%3A20%3A05Z&sks=b&skv=2021-08-06&sig=/swt/qfEcX39twkR%2BN34I1vFR5qckO1PGG9CwcTVkhE%3D"
+    "https://oaidalleapiprodscus.blob.core.windows.net/private/org-wuyDqsQhD28qJUtbqfXKRoeK/user-TssUk3S0DwDVDQsrn19yjfit/img-zpxm9klFz5E5PC5f2gnW9ek0.png?st=2023-05-08T14%3A18%3A21Z&se=2023-05-08T16%3A18%3A21Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-05-08T03%3A25%3A36Z&ske=2023-05-09T03%3A25%3A36Z&sks=b&skv=2021-08-06&sig=T8qnVH%2BT2%2BhV/HBT12vyksOLvOKLV606TgmJAjyTZOY%3D"
   );
   const [isLoading, setIsLoading] = useState(false);
   const [prompt, setPrompt] = useState(
