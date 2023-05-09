@@ -10,7 +10,7 @@ import styles from "./Footer.module.scss";
 interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => (
-  <div className={styles.Footer}>
+  <section className={styles.Footer}>
     <Container>
       <div className={styles.Footer__body}>
         <FooterAdvantages></FooterAdvantages>
@@ -18,7 +18,7 @@ const Footer: FC<FooterProps> = () => (
       </div>
       <FooterPrivacy></FooterPrivacy>
     </Container>
-  </div>
+  </section>
 );
 
 export default Footer;

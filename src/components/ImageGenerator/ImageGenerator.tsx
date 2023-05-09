@@ -55,7 +55,7 @@ const ImageGenerator: FC<ImageGeneratorProps> = () => {
   }
 
   return (
-    <div className={styles.ImageGenerator}>
+    <section className={styles.ImageGenerator}>
       <Container>
         <div className={styles.ImageGenerator_subtitle}>
           <Subtitle label="Requests"></Subtitle>
@@ -82,7 +82,7 @@ const ImageGenerator: FC<ImageGeneratorProps> = () => {
           )}
         </div>
       </Container>
-    </div>
+    </section>
   );
 };
 export default ImageGenerator;
