@@ -9,7 +9,7 @@ import ImageSearch from "../ImageSearch/ImageSearch";
 import styles from "./ImageGenerator.module.scss";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -17,10 +17,10 @@ interface ImageGeneratorProps {}
 
 const ImageGenerator: FC<ImageGeneratorProps> = () => {
   const [image, setImage] = useState(
-    "https://oaidalleapiprodscus.blob.core.windows.net/private/org-wuyDqsQhD28qJUtbqfXKRoeK/user-TssUk3S0DwDVDQsrn19yjfit/img-GbkKzzOZ5SLJHgTFFFZ6lQ96.png?st=2023-05-08T14%3A18%3A21Z&se=2023-05-08T16%3A18%3A21Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-05-08T03%3A25%3A36Z&ske=2023-05-09T03%3A25%3A36Z&sks=b&skv=2021-08-06&sig=KEgWX5Bsv/wQOwhhAa6UdzsfsXKQi5STtTzkzl/HGW4%3D"
+    "https://www.bridgefordesign.com/cms/images/large/1527761252_fabcosummer2018.jpg"
   );
   const [image2, setImage2] = useState(
-    "https://oaidalleapiprodscus.blob.core.windows.net/private/org-wuyDqsQhD28qJUtbqfXKRoeK/user-TssUk3S0DwDVDQsrn19yjfit/img-zpxm9klFz5E5PC5f2gnW9ek0.png?st=2023-05-08T14%3A18%3A21Z&se=2023-05-08T16%3A18%3A21Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-05-08T03%3A25%3A36Z&ske=2023-05-09T03%3A25%3A36Z&sks=b&skv=2021-08-06&sig=T8qnVH%2BT2%2BhV/HBT12vyksOLvOKLV606TgmJAjyTZOY%3D"
+    "https://cdn.home-designing.com/wp-content/uploads/2016/04/modern-art-deco-interior.jpg"
   );
   const [isLoading, setIsLoading] = useState(false);
   const [prompt, setPrompt] = useState(
@@ -76,8 +76,8 @@ const ImageGenerator: FC<ImageGeneratorProps> = () => {
             </div>
           ) : (
             <div className={styles.ImageGenerator__img}>
-              <img src={image}></img>
-              <img src={image2}></img>
+              <img alt="interior" src={image}></img>
+              <img alt="interior" src={image2}></img>
             </div>
           )}
         </div>
