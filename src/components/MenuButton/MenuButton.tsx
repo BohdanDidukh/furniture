@@ -8,7 +8,7 @@ import styles from "./MenuButton.module.scss";
 
 interface MenuButtonProps {}
 
-const MenuButton: FC<MenuButtonProps> = ({}) => {
+const MenuButton: FC<MenuButtonProps> = () => {
   const dispatch = useDispatch();
   const isMenuOpen = useSelector(
     (state: unknown) => (state as RootState).menu.isOpen

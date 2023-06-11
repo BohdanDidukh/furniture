@@ -8,9 +8,6 @@ import SofaChangeColor from "../SofaChangeColor/SofaChangeColor";
 import Search from "../Search/Search";
 
 import background1 from "../../assets/images/background/background1.png";
-import background2 from "../../assets/images/background/background2.png";
-import background3 from "../../assets/images/background/background3.png";
-import background4 from "../../assets/images/background/background4.png";
 
 import styles from "./Hero.module.scss";
 

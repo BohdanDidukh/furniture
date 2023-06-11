@@ -46,7 +46,6 @@ const ImageGenerator: FC<ImageGeneratorProps> = () => {
       setIsLoading(false);
     } catch (e) {
       setIsLoading(false);
-      console.log(e);
     }
   }
 
