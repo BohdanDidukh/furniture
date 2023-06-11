@@ -1,6 +1,8 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import Slider from "react-slick";
 
+import { RootState } from "../../store/rootReducer";
 import ProductCard from "../ProductCard/ProductCard";
 import ProductCardMore from "../ProductCardMore/ProductCardMore";
 
@@ -8,20 +10,21 @@ import styles from "./ProductSlider.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-interface Product {
-  img: string;
-  title: string;
-  category: string;
-  price: number;
-}
+interface ProductSliderProps {}
 
-interface ProductSliderProps {
-  items: Product[][];
-}
+const ProductSlider: FC<ProductSliderProps> = () => {
+  const filteredProducts = useSelector(
+    (state: RootState) => state.product.filteredProducts
+  );
+  const [showProduct, setShowProduct] = useState<boolean>(false);
 
-const ProductSlider: FC<ProductSliderProps> = ({items}) => {
+  useEffect(() => {
+    setShowProduct(true);
+  }, [filteredProducts]);
+
   const CustomPrevArrow: React.FC = (props) => {
     const { onClick } = props as any;
+
     return (
       <button onClick={onClick} className={styles.PrevArrow}>
         <svg
@@ -70,8 +73,10 @@ const ProductSlider: FC<ProductSliderProps> = ({items}) => {
 
   const settings = {
     dots: false, // Відображення крапок навігації
-    infinite: false, // Безкінечний режим прокрутки
+    infinite: true, // Безкінечний режим прокрутки
     speed: 300, // Швидкість прокрутки (в мілісекундах)
+    swipe: true, //Скрол за допомогою свайпу на сенсорних екранах
+    swipeToSlide: true, // Скрол за допомогою свайпу на тачпаді
     slidesToShow: 4, // Кількість відображуваних слайдів одночасно
     slidesToScroll: 1, // Кількість слайдів, що прокручуються за один раз
     autoplay: false, // Автоматичне відтворення слайдів
@@ -102,20 +107,10 @@ const ProductSlider: FC<ProductSliderProps> = ({items}) => {
   return (
     <div className={styles.ProductSlider}>
       <Slider {...settings}>
-        {items.map((subItems, index) => (
-          <div key={index}>
-            {subItems.map((item, subIndex) => (
-              <ProductCard
-                key={subIndex}
-                img={item.img}
-                title={item.title}
-                category={item.category}
-                price={item.price}
-              />
-            ))}
-          </div>
+        {filteredProducts.map((product) => (
+          <ProductCard product={product} show={showProduct} />
         ))}
-        <ProductCardMore/>
+        <ProductCardMore />
       </Slider>
     </div>
   );

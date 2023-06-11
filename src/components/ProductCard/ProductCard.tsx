@@ -1,27 +1,28 @@
 import React, { FC } from "react";
 
+import { Product } from "../../interfaces/Product";
 import RatingStar from "../RatingStar/RatingStar";
-
-import chair1 from "../../assets/images/products/chair1.png";
 
 import styles from "./ProductCard.module.scss";
 
 interface ProductCardProps {
-  key: number;
-  img: string;
-  title: string;
-  category: string;
-  price: number;
+  product: Product;
+  show: boolean;
 }
 
-const ProductCard: FC<ProductCardProps> = ({ key, img, title, category, price }) => {
+const ProductCard: FC<ProductCardProps> = ({ product, show }) => {
   return (
-    <div className={styles.ProductCard} key={key}>
-      <img src={img} className={styles.ProductCard__img} />
+    <div
+      className={`${styles.ProductCard} ${show ? styles.fadeIn : ""}`}
+      key={product.id}
+    >
+      <img alt="" src={product.image} className={styles.ProductCard__img} />
       <div className={styles.ProductCard__body}>
         <div className={styles.ProductCard__main}>
-          <p className={styles.ProductCard__category}>{category}</p>
-          <p className={styles.ProductCard__title}>{title}</p>
+          <p className={styles.ProductCard__category}>
+            {product.category.name}
+          </p>
+          <p className={styles.ProductCard__title}>{product.name}</p>
           <div className={styles.ProductCard__rating}>
             <RatingStar></RatingStar>
             <RatingStar></RatingStar>
@@ -31,7 +32,7 @@ const ProductCard: FC<ProductCardProps> = ({ key, img, title, category, price })
           </div>
         </div>
         <div className={styles.ProductCard__footer}>
-          <p className={styles.ProductCard__price}>{price}</p>
+          <p className={styles.ProductCard__price}>{product.price}</p>
           <button className={styles.ProductCard__button}>
             <svg
               width="21"

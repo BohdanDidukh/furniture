@@ -9,6 +9,10 @@
   text-align: left;
   margin-left: auto;
   margin-right: auto;
+  &.fadeIn {
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out forwards;
+  }
 }
 .ProductCard__img {
   @include adaptiveValue("width", 270, 270);
@@ -72,4 +76,13 @@
   background: $productColor;
   border-radius: rem(31);
   color: $productColor;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,14 +1,14 @@
 import { combineReducers } from "redux";
 
 import menuReducer from "./menuSlice";
+import productReducer from "./slices/productSlice";
 
-// Комбінувати редюсери в rootReducer
 const rootReducer = combineReducers({
   menu: menuReducer,
-  // Додаткові редюсери, якщо вони є
+  product:productReducer,
+  
 });
 
 export default rootReducer;
 
-// Експортувати тип RootState
 export type RootState = ReturnType<typeof rootReducer>;

@@ -1,22 +1,24 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
+import { setActiveFilter } from "../../store/slices/productSlice";
+import { RootState } from "../../store";
 import FilterButton from "../FilterButton/FilterButton";
 
 import styles from "./ProductFilte.module.scss";
 
-interface ProductFilterProps {}
+interface ProductFilterProps {
+}
 
 const ProductFilter: FC<ProductFilterProps> = () => {
-  const filters = [
-    { category: "Chair", position: "0 " },
-    { category: "Lamp", position: "25%" },
-    { category: "Bed", position: "50%" },
-    { category: "Sofa", position: "75%" },
-  ];
-  const [activeFilter, setActiveFilter] = useState<string>("Chair");
+  const filters = useSelector((state: RootState) => state.product.filters);
+  const activeFilter = useSelector(
+    (state: RootState) => state.product.activeFilter
+  );
+  const dispatch = useDispatch();
 
   const handleFilterClick = (name: string) => {
-    setActiveFilter(name);
+    dispatch(setActiveFilter(name));
   };
 
   return (
