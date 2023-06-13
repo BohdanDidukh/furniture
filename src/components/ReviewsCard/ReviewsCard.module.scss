@@ -5,14 +5,14 @@
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  @include adaptiveValue("width", 370, 320, 0, 1440, 1300);
+  width: rem(370);
   height: rem(510);
 }
 .ReviewsCard__wrapper {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  @include adaptiveValue("width", 370, 320, 0, 1440, 1300);
+  width: rem(370);
   height: rem(476);
   border-radius: rem(18);
   background-repeat: no-repeat;
@@ -37,7 +37,7 @@
   left: 50%;
   bottom: rem(18);
   transform: translateX(-50%);
-  @include adaptiveValue("width", 335, 280, 0, 1440, 1300);
+  width: rem(335);
   height: rem(210);
   background: $secondaryColor;
   backdrop-filter: blur(5.5px);
@@ -86,4 +86,21 @@
   text-align: center;
   color: $mainColor;
   opacity: 0.8;
+}
+@media (max-width: 620px) {
+  .ReviewsCard {
+    @include adaptiveValue("width", 370, 240);
+  }
+  .ReviewsCard__wrapper {
+    @include adaptiveValue("width", 370, 240);
+  }
+  .ReviewsCard__body {
+    @include adaptiveValue("width", 335, 220);
+  }
+  .ReviewsCard__reflection {
+    @include adaptiveValue("width", 300, 230);
+  }
+  .ReviewsCard__review {
+    width: rem(220);
+  }
 }

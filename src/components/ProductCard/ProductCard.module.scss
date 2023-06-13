@@ -4,7 +4,7 @@
 .ProductCard {
   display: flex;
   flex-direction: column;
-  @include adaptiveValue("width", 270, 270);
+  width: rem(270);
   border-radius: 20px;
   text-align: left;
   margin-left: auto;
@@ -15,7 +15,7 @@
   }
 }
 .ProductCard__img {
-  @include adaptiveValue("width", 270, 270);
+  width: rem(270);
   height: rem(335);
   margin-left: auto;
   margin-right: auto;
@@ -76,6 +76,15 @@
   background: $productColor;
   border-radius: rem(31);
   color: $productColor;
+}
+
+@media (max-width: 440px) {
+  .ProductCard {
+    @include adaptiveValue("width", 270, 240);
+  }
+  .ProductCard__img {
+    @include adaptiveValue("width", 270, 240);
+  }
 }
 
 @keyframes fade-in {

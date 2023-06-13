@@ -6,7 +6,7 @@
   justify-content: space-between;
   margin: auto;
   align-items: center;
-  @include adaptiveValue("width", 665, 280, 0, 980, 300);
+  @include adaptiveValue("width", 665, 220, 0, 980, 300);
   @media (max-width: 540px) {
     text-align: center;
     flex-direction: column;
