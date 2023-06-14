@@ -11,14 +11,14 @@ interface NavItemProps {
 const NavItem: FC<NavItemProps> = ({ link, label }) => {
   const handleClick =
     ( link: string): MouseEventHandler<HTMLAnchorElement> =>
-    (event) => {
-      event.preventDefault();
-      scrollToSection(link);
-    };
+      (event) => {
+        event.preventDefault();
+        scrollToSection(link);
+      };
 
   return (
     <li className={styles.NavItem}>
-      <a href="#" onClick={handleClick(link)}>
+      <a href={link} onClick={handleClick(link)}>
         {label}
       </a>
     </li>

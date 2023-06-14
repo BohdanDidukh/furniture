@@ -18,11 +18,11 @@ const DropMenu: FC<DropMenuProps> = ({ title, items }) => {
 
   const handleClick =
     (category: string, link: string): MouseEventHandler<HTMLAnchorElement> =>
-    (event) => {
-      event.preventDefault();
-      dispatch(setActiveFilter(category));
-      scrollToSection(link);
-    };
+      (event) => {
+        event.preventDefault();
+        dispatch(setActiveFilter(category));
+        scrollToSection(link);
+      };
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
