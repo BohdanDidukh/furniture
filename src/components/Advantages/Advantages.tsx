@@ -9,7 +9,7 @@ import styles from "./Advantages.module.scss";
 interface AdvantagesProps {}
 
 const Advantages: FC<AdvantagesProps> = () => (
-  <section className={styles.Advantages}>
+  <section id="about" className={styles.Advantages}>
     <Container>
       <Experience></Experience>
       <Material></Material>

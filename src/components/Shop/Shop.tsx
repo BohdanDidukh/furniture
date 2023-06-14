@@ -12,7 +12,7 @@ interface ShopProps {}
 
 const Shop: FC<ShopProps> = () => {
   return (
-    <section className={styles.Shop}>
+    <section id="shop" className={styles.Shop}>
       <Container>
         <div className={styles.Shop__title}>
           <Title label="Best Selling Product" />

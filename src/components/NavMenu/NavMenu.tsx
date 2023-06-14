@@ -9,20 +9,19 @@ interface NavMenuProps {}
 
 const NavMenu: FC<NavMenuProps> = () => {
   const items = [
-    ["Chair", "#"],
-    ["Beds", "#"],
-    ["Sofa", "#"],
-    ["Lamps", "#"],
+    ["Chairs", "#shop", "Chair"],
+    ["Beds", "#shop", "Beds"],
+    ["Lamps", "#shop", "Lamps"],
+    ["Sofa", "#shop", "Sofa"],
   ];
 
   return (
     <ul className={styles.NavMenu}>
       <DropMenu title="Furniture" items={items}></DropMenu>
-      <NavItem link="#" label="Shop"></NavItem>
-      <NavItem link="#" label="About us"></NavItem>
-      <NavItem link="#" label="Contact"></NavItem>
+      <NavItem link="#shop" label="Shop"></NavItem>
+      <NavItem link="#about" label="About us" />
+      <NavItem link="#contact" label="Contact" />
     </ul>
   );
 };
-
 export default NavMenu;

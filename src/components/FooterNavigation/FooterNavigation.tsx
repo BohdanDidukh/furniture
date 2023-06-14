@@ -24,7 +24,7 @@ const FooterNavigation: FC<FooterNavigationProps> = () => {
   ];
 
   return (
-    <div className={styles.FooterNavigation}>
+    <div id="contact" className={styles.FooterNavigation}>
       <CategoryNavigation title="Services" children={services} />
       <CategoryNavigation title="Furniture" children={furniture} />
       <CategoryNavigation title="Follow Us" children={follow} />

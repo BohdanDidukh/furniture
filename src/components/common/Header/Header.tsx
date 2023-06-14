@@ -15,8 +15,8 @@ const Header: FC<HeaderProps> = () => {
         <Logo isBlack={false}></Logo>
         <Navigation />
         <div className={styles.Header__buttons}>
-          <MenuButton />
           <ShopingCart />
+          <MenuButton />
         </div>
       </div>
     </header>
