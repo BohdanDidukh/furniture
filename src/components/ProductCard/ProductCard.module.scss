@@ -71,11 +71,32 @@
   }
 }
 .ProductCard__button {
+  position: relative;
+  display: inline-block;
   width: rem(50);
   height: rem(50);
   background: $productColor;
   border-radius: rem(31);
   color: $productColor;
+  transition: transform 0.3s ease-in-out;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: rem(20);
+    height: rem(3);
+    background-color: $backgroundColor;
+    transform: translate(-50%, -50%);
+  }
+  &::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  &.active{
+    transform: rotate(45deg);
+    
+  }
 }
 
 @media (max-width: 440px) {

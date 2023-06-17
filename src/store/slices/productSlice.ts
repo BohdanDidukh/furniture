@@ -21,7 +21,9 @@ const initialState: ProductState = {
   ],
   activeFilter: "Chairs",
   products: products,
-  filteredProducts: products,
+  filteredProducts: products.filter(
+    (product) => product.category.name === "Chairs"
+  ),
   searchTerm: "",
   searchResult: [],
 };

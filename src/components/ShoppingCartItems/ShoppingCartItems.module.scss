@@ -1,0 +1,119 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.ShoppingCartItems {
+  position: absolute;
+  top: 50px;
+  z-index: 9;
+  @include adaptiveValue("width", 550, 400);
+  height: rem(450);
+  margin-top: rem(50);
+  margin-right: rem(30);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background: $backgroundColor;
+  transition: all 0.5s ease-in-out 0s;
+
+  &.Cart-open {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f5f5f5;
+    right: 0;
+    backdrop-filter: blur(15px);
+    &::before {
+      right: 0;
+    }
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: rem(20);
+      margin: rem(20) 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: rem(20);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #999;
+    }
+  }
+  @media (max-width: $mobile) {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    border-radius: 0;
+    background: #fff;
+    backdrop-filter: blur(50px);
+  }
+  &::before {
+    content: "";
+    right: -100%;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  &.Cart-close {
+    right: -100%;
+    &::before {
+      right: -100%;
+    }
+    overflow: hidden;
+  }
+}
+.ShoppingCartItems__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: rem(30);
+}
+.ShoppingCartItems__title {
+  padding-top: rem(20);
+}
+.ShoppingCartItems__button {
+  position: relative;
+  display: inline-block;
+  width: rem(50);
+  height: rem(50);
+  border-radius: rem(31);
+  transition: transform 0.3s ease-in-out;
+  transform: rotate(45deg);
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: rem(30);
+    height: rem(3);
+    background-color: $productColor;
+    transform: translate(-50%, -50%);
+  }
+  &::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+.ShoppingCartItems__scroll {
+  padding: rem(20) rem(25);
+}
+.ShoppingCartItems__list {
+}
+.ShoppingCartItems__message {
+  font-size: rem(24);
+}
+@media (max-width: 620px) {
+  .Search__results {
+    max-height: rem(270);
+  }
+}
+@media (max-width: 420px) {
+  .Search__results {
+    max-height: rem(210);
+  }
+}

@@ -11,15 +11,20 @@ interface SearchProps {}
 
 const Search: FC<SearchProps> = () => {
   const [query, setQuery] = useState("");
+  const [showProduct, setShowProduct] = useState<boolean>(false);
+  const dispatch = useDispatch();
   const searchResult = useSelector(
     (state: RootState) => state.product.searchResult
   );
-  const dispatch = useDispatch();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(setSearchTerm(query));
   };
+
+  useEffect(() => {
+    setShowProduct(true);
+  }, [searchResult]);
 
   useEffect(() => {
     dispatch(setSearchTerm(query));
@@ -67,7 +72,11 @@ const Search: FC<SearchProps> = () => {
             <h2 className={styles.Search__error}>No products found</h2>
           ) : (
             searchResult.map((product, index) => (
-              <ProductCardMini key={index} product={product} />
+              <ProductCardMini
+                key={index}
+                product={product}
+                show={showProduct}
+              />
             ))
           )}
         </div>

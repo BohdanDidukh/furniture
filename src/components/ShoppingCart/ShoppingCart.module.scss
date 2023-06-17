@@ -1,0 +1,33 @@
+@use "sass:math";
+@import "../../assets/styles/main.scss";
+
+.ShoppingCart {
+}
+.ShoppingCart__button {
+  position: relative;
+}
+.ShoppingCart__counter {
+  position: absolute;
+  z-index: 1;
+  top: rem(-10);
+  left: 60%;
+  padding: rem(3) rem(7);
+  color: $secondaryColor;
+  background-color: $accentColor;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+.ShoppingCart_icon {
+  &.fadeIn {
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out forwards;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

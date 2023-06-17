@@ -103,14 +103,14 @@
   font-size: rem(20);
   text-align: center;
 }
-@media (max-width: 620px) {
+@media (max-width: 920px) {
   .Search__results {
-    max-height: rem(270);
+    max-height: rem(480);
   }
 }
 @media (max-width: 420px) {
   .Search__results {
-    max-height: rem(210);
+    max-height: rem(240);
   }
 }
 
