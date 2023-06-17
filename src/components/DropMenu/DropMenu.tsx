@@ -2,6 +2,7 @@ import React, { FC, MouseEventHandler, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
+import { toggleMenu } from "../../store/slices/menuSlice";
 import { scrollToSection } from "../../utils/scrollUtils";
 import { setActiveFilter } from "../../store/slices/productSlice";
 
@@ -21,6 +22,7 @@ const DropMenu: FC<DropMenuProps> = ({ title, items }) => {
       (event) => {
         event.preventDefault();
         dispatch(setActiveFilter(category));
+        dispatch(toggleMenu());
         scrollToSection(link);
       };
 

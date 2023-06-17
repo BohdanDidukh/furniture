@@ -4,7 +4,7 @@
 .ShoppingCartItems {
   position: absolute;
   top: 50px;
-  z-index: 9;
+  z-index: 11;
   @include adaptiveValue("width", 550, 400);
   height: rem(450);
   margin-top: rem(50);
@@ -42,16 +42,6 @@
       background-color: #999;
     }
   }
-  @media (max-width: $mobile) {
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    right: -100%;
-    border-radius: 0;
-    background: #fff;
-    backdrop-filter: blur(50px);
-  }
   &::before {
     content: "";
     right: -100%;
@@ -74,7 +64,6 @@
   margin: rem(30);
 }
 .ShoppingCartItems__title {
-  padding-top: rem(20);
 }
 .ShoppingCartItems__button {
   position: relative;
@@ -106,6 +95,19 @@
 }
 .ShoppingCartItems__message {
   font-size: rem(24);
+}
+@media (max-width: $mobile) {
+  .ShoppingCartItems {
+    position: fixed;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    border-radius: 0;
+    background: #fff;
+    backdrop-filter: blur(50px);
+  }
 }
 @media (max-width: 620px) {
   .Search__results {

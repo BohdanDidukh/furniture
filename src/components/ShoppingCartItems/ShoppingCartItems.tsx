@@ -11,6 +11,7 @@ import styles from "./ShoppingCartItems.module.scss";
 interface ShoppingCartItemsProps {}
 
 const ShoppingCartItems: FC<ShoppingCartItemsProps> = () => {
+  const [showProduct, setShowProduct] = useState<boolean>(false);
   const dispatch = useDispatch();
   const productsInCart = useSelector(
     (state: unknown) => (state as RootState).cart.cart
@@ -18,8 +19,13 @@ const ShoppingCartItems: FC<ShoppingCartItemsProps> = () => {
   const isCartOpen = useSelector(
     (state: unknown) => (state as RootState).cart.isOpen
   );
-  const [showProduct, setShowProduct] = useState<boolean>(false);
-
+  useEffect(() => {
+    if (isCartOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isCartOpen]);
   useEffect(() => {
     setShowProduct(true);
   }, [productsInCart]);
