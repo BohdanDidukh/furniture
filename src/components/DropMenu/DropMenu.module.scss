@@ -12,7 +12,6 @@
   @media (max-width: $mobile) {
     font-size: rem(40);
   }
-  
 
   .DropMenu__icon {
     margin-left: rem(15);
@@ -48,7 +47,7 @@
     line-height: math.div(21, 20);
     color: $secondaryColor;
     @media (max-width: $mobile) {
-      font-size: rem(40);
+      font-size: rem(30);
     }
   }
 
@@ -59,7 +58,7 @@
     animation: slideDown 0.2s ease-out forwards;
   }
   &.isOpen .DropMenu__icon {
-    transform: translateY(-50%) rotate(90deg);
+    transform: rotate(90deg);
   }
 }
 

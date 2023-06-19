@@ -3,14 +3,11 @@
 
 .ShoppingCartItems {
   position: absolute;
-  top: 50px;
+  top: 0;
   z-index: 11;
   @include adaptiveValue("width", 550, 400);
-  height: rem(450);
-  margin-top: rem(50);
-  margin-right: rem(30);
+  height: 100vh;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
   background: $backgroundColor;
   transition: all 0.5s ease-in-out 0s;
 
@@ -65,7 +62,7 @@
 }
 .ShoppingCartItems__title {
 }
-.ShoppingCartItems__button {
+.ShoppingCartItems__button_close {
   position: relative;
   display: inline-block;
   width: rem(50);
@@ -96,6 +93,55 @@
 .ShoppingCartItems__message {
   font-size: rem(24);
 }
+.ShoppingCartItems__footer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  width: 100%;
+  padding: 0 rem(30) rem(30) rem(30);
+  text-align: left;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: rem(21);
+}
+.ShoppingCartItems__amount {
+  color: $productColor;
+  span {
+    position: relative;
+    color: $accentColor;
+  }
+  svg {
+    position: absolute;
+    margin-left: rem(5);
+    top: rem(-2);
+    right: rem(-10);
+  }
+}
+.ShoppingCartItems__action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ShoppingCartItems__continue {
+  height: rem(54);
+  padding: rem(15) rem(25);
+  color: $backgroundColor;
+  background-color: $productColor;
+  border-radius: rem(30);
+}
+.ShoppingCartItems__order {
+  padding: rem(15) rem(25);
+  color: $backgroundColor;
+  background-color: $productColor;
+  border-radius: rem(30);
+  &.active {
+    opacity: 1;
+  }
+  &.disable {
+    opacity: 0.6;
+  }
+}
 @media (max-width: $mobile) {
   .ShoppingCartItems {
     position: fixed;
@@ -110,12 +156,8 @@
   }
 }
 @media (max-width: 620px) {
-  .Search__results {
-    max-height: rem(270);
-  }
-}
-@media (max-width: 420px) {
-  .Search__results {
-    max-height: rem(210);
+  .ShoppingCartItems__action {
+    flex-direction: column-reverse;
+    gap: rem(20);
   }
 }

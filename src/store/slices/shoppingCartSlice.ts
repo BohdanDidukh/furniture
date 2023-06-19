@@ -5,11 +5,13 @@ import { Product } from "../../interfaces/Product";
 interface shoppingCartSliceState {
   cart: Product[];
   isOpen: boolean;
+  orderAmount: number;
 }
 
 const initialState: shoppingCartSliceState = {
   cart: [],
   isOpen: false,
+  orderAmount: 0,
 };
 
 const shoppingCartSlice = createSlice({
@@ -25,10 +27,13 @@ const shoppingCartSlice = createSlice({
     removeFromCart: (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
     },
+    orderAmountCounter: (state, action) => {
+      state.orderAmount = action.payload;
+    },
   },
 });
 
-export const { toggleCart, addToCart, removeFromCart } =
+export const { toggleCart, addToCart, removeFromCart, orderAmountCounter } =
   shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
