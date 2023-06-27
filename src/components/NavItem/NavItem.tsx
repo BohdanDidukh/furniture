@@ -1,6 +1,7 @@
 import React, { FC, MouseEventHandler } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
+import { RootState } from "../../store";
 import { scrollToSection } from "../../utils/scrollUtils";
 import { toggleMenu } from "../../store/slices/menuSlice";
 
@@ -12,11 +13,16 @@ interface NavItemProps {
 
 const NavItem: FC<NavItemProps> = ({ link, label }) => {
   const dispatch = useDispatch();
+  const isMenuOpen = useSelector(
+    (state: unknown) => (state as RootState).menu.isOpen
+  );
   const handleClick =
     (link: string): MouseEventHandler<HTMLAnchorElement> =>
       (event) => {
         event.preventDefault();
-        dispatch(toggleMenu());
+        if (isMenuOpen) {
+          dispatch(toggleMenu());
+        }
         scrollToSection(link);
       };
 
