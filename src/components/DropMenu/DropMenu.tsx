@@ -1,7 +1,8 @@
 import React, { FC, MouseEventHandler, useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
+import { RootState } from "../../store";
 import { toggleMenu } from "../../store/slices/menuSlice";
 import { scrollToSection } from "../../utils/scrollUtils";
 import { setActiveFilter } from "../../store/slices/productSlice";
@@ -16,13 +17,18 @@ interface DropMenuProps {
 const DropMenu: FC<DropMenuProps> = ({ title, items }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
+  const isMenuOpen = useSelector(
+    (state: unknown) => (state as RootState).menu.isOpen
+  );
 
   const handleClick =
     (category: string, link: string): MouseEventHandler<HTMLAnchorElement> =>
       (event) => {
         event.preventDefault();
         dispatch(setActiveFilter(category));
-        dispatch(toggleMenu());
+        if (isMenuOpen) {
+          dispatch(toggleMenu());
+        }
         scrollToSection(link);
       };
 
